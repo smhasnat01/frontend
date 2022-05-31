@@ -11,7 +11,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Container>
-        <main clasName="py-3">
+        <main className="py-3">
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/product/:id" element={<ProductScreen />} />
