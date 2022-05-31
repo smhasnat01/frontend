@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Row, Col, Image, ListGroup } from 'react-bootstrap'
+import { useParams, Link } from 'react-router-dom'
+import { Row, Col, Image, ListGroup, Container } from 'react-bootstrap'
 import products from '../products'
 
-const ProductScreen = ({ match }) => {
-  const product = products.find((p) => p._id === match.params.id)
+const ProductScreen = () => {
+  const id = useParams()
+  const product = products.find((p) => p._id === id?.id)
 
   return (
-    <>
+    <Container>
       <Link className="btn btn-light my-3" to="/">
         Go Back
       </Link>
@@ -23,7 +24,7 @@ const ProductScreen = ({ match }) => {
           </ListGroup>
         </Col>
       </Row>
-    </>
+    </Container>
   )
 }
 
